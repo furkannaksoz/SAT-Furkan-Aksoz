@@ -1,0 +1,1019 @@
+[gd_scene load_steps=68 format=2]
+
+[ext_resource path="res://Tiles/snowBallBig.png" type="Texture" id=1]
+[ext_resource path="res://Tiles/treeTopSnow.png" type="Texture" id=2]
+[ext_resource path="res://Tiles/iceBlockHalfAlt.png" type="Texture" id=3]
+[ext_resource path="res://Tiles/treeTrunkBottom.png" type="Texture" id=4]
+[ext_resource path="res://Tiles/spikesTopAlt.png" type="Texture" id=5]
+[ext_resource path="res://Tiles/snowWave.png" type="Texture" id=6]
+[ext_resource path="res://Tiles/iceBlock.png" type="Texture" id=7]
+[ext_resource path="res://Tiles/spikesTopAlt2.png" type="Texture" id=8]
+[ext_resource path="res://Tiles/iceBlockHalf.png" type="Texture" id=9]
+[ext_resource path="res://Tiles/spikesTop.png" type="Texture" id=10]
+[ext_resource path="res://Tiles/rock.png" type="Texture" id=11]
+[ext_resource path="res://Tiles/tundraCliffRightAlt.png" type="Texture" id=12]
+[ext_resource path="res://Tiles/iglooDoor.png" type="Texture" id=13]
+[ext_resource path="res://Tiles/treeBranchesSnowRightSnowAlt.png" type="Texture" id=14]
+[ext_resource path="res://Tiles/iceBlockAlt.png" type="Texture" id=15]
+[ext_resource path="res://Tiles/deadTree.png" type="Texture" id=16]
+[ext_resource path="res://Tiles/tundraCliffLeftAlt.png" type="Texture" id=17]
+[ext_resource path="res://Tiles/treeBranchesLeftSnowAlt.png" type="Texture" id=18]
+[ext_resource path="res://Tiles/caneGreenSmall.png" type="Texture" id=19]
+[ext_resource path="res://Tiles/tundraHillRight.png" type="Texture" id=20]
+[ext_resource path="res://player.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Tiles/keyYellow.png" type="Texture" id=22]
+[ext_resource path="res://Key.gd" type="Script" id=23]
+[ext_resource path="res://Door.gd" type="Script" id=25]
+
+[sub_resource type="RectangleShape2D" id=47]
+extents = Vector2( 35, 35 )
+
+[sub_resource type="RectangleShape2D" id=48]
+extents = Vector2( 21.5, 10 )
+
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 29.5, 30.5 )
+
+[sub_resource type="RectangleShape2D" id=32]
+extents = Vector2( 34.5, 29.5 )
+
+[sub_resource type="RectangleShape2D" id=33]
+extents = Vector2( 34, 31.5 )
+
+[sub_resource type="RectangleShape2D" id=34]
+extents = Vector2( 32.5, 31 )
+
+[sub_resource type="RectangleShape2D" id=35]
+extents = Vector2( 34.5071, 34.4531 )
+
+[sub_resource type="RectangleShape2D" id=36]
+extents = Vector2( 35, 31 )
+
+[sub_resource type="RectangleShape2D" id=37]
+extents = Vector2( 36, 31.5 )
+
+[sub_resource type="RectangleShape2D" id=38]
+extents = Vector2( 34, 35 )
+
+[sub_resource type="RectangleShape2D" id=39]
+extents = Vector2( 35.5, 35 )
+
+[sub_resource type="RectangleShape2D" id=40]
+extents = Vector2( 35, 34.5 )
+
+[sub_resource type="RectangleShape2D" id=41]
+extents = Vector2( 35.5, 30.5 )
+
+[sub_resource type="RectangleShape2D" id=42]
+extents = Vector2( 35, 36.5 )
+
+[sub_resource type="RectangleShape2D" id=43]
+extents = Vector2( 37, 33.5 )
+
+[sub_resource type="RectangleShape2D" id=44]
+extents = Vector2( 35.5, 34 )
+
+[sub_resource type="RectangleShape2D" id=45]
+extents = Vector2( 35.5, 37 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 30.5, 27.5 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 28, 23.5 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 26, 11.5 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 28.5, 11.5 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 26.5, 10.5 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 23.5, 27.5 )
+
+[sub_resource type="SegmentShape2D" id=46]
+a = Vector2( -35, -34 )
+b = Vector2( 40, 40 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 35, 18.5 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 28.5, 14.5 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 25, 14 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 26.5, 13.5 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 27.5, 14 )
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 27, 14.5 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 30, 14.5283 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 28, 14 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 24.5, 12.5 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 29.5, 17 )
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 27.5, 14.5 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 32.8788, 16 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 25, 13 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 28, 11.5 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 30.5, 16.5 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 31, 14.5 )
+
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 60.878, 23.0736 )
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 28.5, 13.2727 )
+
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 30.5, 14.7368 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.698
+anchor_bottom = 1.784
+margin_left = 6.0
+margin_top = 18.0
+margin_right = 10.144
+margin_bottom = 17.8799
+
+[node name="main" type="Node2D" parent="."]
+pause_mode = 1
+physics_interpolation_mode = 1
+position = Vector2( 2, 2 )
+
+[node name="Door" type="Area2D" parent="main"]
+position = Vector2( 54, 109 )
+scale = Vector2( 0.628571, 0.671429 )
+script = ExtResource( 25 )
+
+[node name="IglooDoor" type="Sprite" parent="main/Door"]
+texture = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/Door"]
+position = Vector2( 0, -0.744629 )
+shape = SubResource( 47 )
+
+[node name="Key" type="Area2D" parent="main"]
+position = Vector2( -2.00003, -2 )
+script = ExtResource( 23 )
+
+[node name="KeyYellow" type="Sprite" parent="main/Key"]
+position = Vector2( 980, 41 )
+scale = Vector2( 0.515625, 0.390625 )
+texture = ExtResource( 22 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/Key"]
+position = Vector2( 980.5, 41 )
+shape = SubResource( 48 )
+
+[node name="Player" parent="main" instance=ExtResource( 21 )]
+position = Vector2( 615, 394 )
+
+[node name="TileMap" type="TileMap" parent="main"]
+position = Vector2( 488, 312 )
+format = 1
+
+[node name="IceBlock15" type="Sprite" parent="main/TileMap"]
+position = Vector2( 433, 256 )
+texture = ExtResource( 7 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/TileMap/IceBlock15"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/TileMap/IceBlock15/StaticBody2D"]
+position = Vector2( -1.5, 4.5 )
+shape = SubResource( 31 )
+
+[node name="IceBlock14" type="Sprite" parent="main/TileMap"]
+position = Vector2( 498.5, 256 )
+scale = Vector2( 1.07143, 1 )
+texture = ExtResource( 7 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/TileMap/IceBlock14"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/TileMap/IceBlock14/StaticBody2D"]
+position = Vector2( 0.500061, 5.5 )
+shape = SubResource( 32 )
+
+[node name="IceBlock13" type="Sprite" parent="main/TileMap"]
+position = Vector2( 366, 256 )
+texture = ExtResource( 7 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/TileMap/IceBlock13"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/TileMap/IceBlock13/StaticBody2D"]
+position = Vector2( 2, 3.5 )
+shape = SubResource( 33 )
+
+[node name="IceBlock12" type="Sprite" parent="main/TileMap"]
+position = Vector2( 300, 256 )
+texture = ExtResource( 7 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/TileMap/IceBlock12"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/TileMap/IceBlock12/StaticBody2D"]
+position = Vector2( 2.5, 4 )
+shape = SubResource( 34 )
+
+[node name="IceBlock11" type="Sprite" parent="main/TileMap"]
+position = Vector2( 232.5, 257.5 )
+scale = Vector2( 1.01429, 0.957143 )
+texture = ExtResource( 7 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/TileMap/IceBlock11"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/TileMap/IceBlock11/StaticBody2D"]
+position = Vector2( 2.46472, 0.546875 )
+scale = Vector2( 0.999999, 1 )
+shape = SubResource( 35 )
+
+[node name="IceBlock10" type="Sprite" parent="main/TileMap"]
+position = Vector2( 164, 256 )
+texture = ExtResource( 7 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/TileMap/IceBlock10"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/TileMap/IceBlock10/StaticBody2D"]
+position = Vector2( 2, 4 )
+shape = SubResource( 36 )
+
+[node name="IceBlock9" type="Sprite" parent="main/TileMap"]
+position = Vector2( 97, 256 )
+texture = ExtResource( 7 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/TileMap/IceBlock9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/TileMap/IceBlock9/StaticBody2D"]
+position = Vector2( -1, 3.5 )
+shape = SubResource( 37 )
+
+[node name="IceBlock8" type="Sprite" parent="main/TileMap"]
+position = Vector2( 29, 254 )
+texture = ExtResource( 7 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/TileMap/IceBlock8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/TileMap/IceBlock8/StaticBody2D"]
+position = Vector2( 1, 2 )
+shape = SubResource( 38 )
+
+[node name="IceBlock7" type="Sprite" parent="main/TileMap"]
+position = Vector2( -40, 255 )
+texture = ExtResource( 7 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/TileMap/IceBlock7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/TileMap/IceBlock7/StaticBody2D"]
+position = Vector2( 0.5, 1 )
+shape = SubResource( 39 )
+
+[node name="IceBlock6" type="Sprite" parent="main/TileMap"]
+position = Vector2( -109, 255 )
+texture = ExtResource( 7 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/TileMap/IceBlock6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/TileMap/IceBlock6/StaticBody2D"]
+position = Vector2( 0, 1.5 )
+shape = SubResource( 40 )
+
+[node name="IceBlock5" type="Sprite" parent="main/TileMap"]
+position = Vector2( -178, 254 )
+texture = ExtResource( 7 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/TileMap/IceBlock5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/TileMap/IceBlock5/StaticBody2D"]
+position = Vector2( 0.5, 4.5 )
+shape = SubResource( 41 )
+
+[node name="IceBlock" type="Sprite" parent="main/TileMap"]
+position = Vector2( -456, 252 )
+texture = ExtResource( 7 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/TileMap/IceBlock"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/TileMap/IceBlock/StaticBody2D"]
+position = Vector2( 0, 1.5 )
+shape = SubResource( 42 )
+
+[node name="IceBlock3" type="Sprite" parent="main/TileMap"]
+position = Vector2( -316, 253 )
+texture = ExtResource( 7 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/TileMap/IceBlock3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/TileMap/IceBlock3/StaticBody2D"]
+position = Vector2( -4, 3.5 )
+shape = SubResource( 43 )
+
+[node name="IceBlock2" type="Sprite" parent="main/TileMap"]
+position = Vector2( -386, 253 )
+texture = ExtResource( 7 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/TileMap/IceBlock2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/TileMap/IceBlock2/StaticBody2D"]
+position = Vector2( -0.5, 3 )
+shape = SubResource( 44 )
+
+[node name="IceBlock4" type="Sprite" parent="main/TileMap"]
+position = Vector2( -527, 162 )
+texture = ExtResource( 7 )
+offset = Vector2( 279, 91 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/TileMap/IceBlock4"]
+position = Vector2( 25, -4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/TileMap/IceBlock4/StaticBody2D"]
+position = Vector2( 254, 94 )
+shape = SubResource( 45 )
+
+[node name="CaneGreenSmall" type="Sprite" parent="main"]
+position = Vector2( 882, 507 )
+texture = ExtResource( 19 )
+
+[node name="DeadTree" type="Sprite" parent="main"]
+position = Vector2( 10, 489 )
+texture = ExtResource( 16 )
+
+[node name="Rock" type="Sprite" parent="main"]
+position = Vector2( 49, 489 )
+texture = ExtResource( 11 )
+
+[node name="SnowBallBig" type="Sprite" parent="main"]
+position = Vector2( 107, 507 )
+scale = Vector2( 0.814286, 0.657143 )
+texture = ExtResource( 1 )
+
+[node name="TreeTrunkBottom" type="Sprite" parent="main"]
+position = Vector2( 959, 491.5 )
+scale = Vector2( 0.885714, 1 )
+texture = ExtResource( 4 )
+
+[node name="TreeTopSnow" type="Sprite" parent="main"]
+position = Vector2( 961, 394.5 )
+scale = Vector2( 0.957143, 0.785714 )
+texture = ExtResource( 2 )
+
+[node name="TreeBranchesSnowRightSnowAlt" type="Sprite" parent="main"]
+position = Vector2( 990, 444.5 )
+scale = Vector2( 0.814286, 0.971429 )
+texture = ExtResource( 14 )
+
+[node name="TreeBranchesLeftSnowAlt" type="Sprite" parent="main"]
+position = Vector2( 929, 445 )
+scale = Vector2( 0.942858, 0.942857 )
+texture = ExtResource( 18 )
+
+[node name="IceBlock" type="Sprite" parent="main"]
+position = Vector2( 212, 491 )
+texture = ExtResource( 7 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/IceBlock"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/IceBlock/StaticBody2D"]
+position = Vector2( -0.5, 0.5 )
+shape = SubResource( 2 )
+
+[node name="IceBlock3" type="Sprite" parent="main"]
+position = Vector2( 54, 167 )
+texture = ExtResource( 7 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/IceBlock3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/IceBlock3/StaticBody2D"]
+position = Vector2( 0, 0.499969 )
+shape = SubResource( 8 )
+
+[node name="IceBlockHalf3" type="Sprite" parent="main"]
+position = Vector2( 172, 317 )
+texture = ExtResource( 9 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/IceBlockHalf3"]
+position = Vector2( -1, -1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/IceBlockHalf3/StaticBody2D"]
+position = Vector2( 1, -13.5 )
+shape = SubResource( 9 )
+
+[node name="IceBlockHalf" type="Sprite" parent="main"]
+position = Vector2( 69, 386 )
+texture = ExtResource( 9 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/IceBlockHalf"]
+position = Vector2( 3, -13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/IceBlockHalf/StaticBody2D"]
+position = Vector2( -2.5, -1.5 )
+shape = SubResource( 4 )
+
+[node name="IceBlockHalf2" type="Sprite" parent="main"]
+position = Vector2( 305, 395 )
+texture = ExtResource( 9 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/IceBlockHalf2"]
+position = Vector2( -1, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/IceBlockHalf2/StaticBody2D"]
+position = Vector2( -0.5, -14.5 )
+shape = SubResource( 5 )
+
+[node name="IceBlockAlt" type="Sprite" parent="main"]
+position = Vector2( 408, 328 )
+texture = ExtResource( 15 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/IceBlockAlt"]
+position = Vector2( 3.05176e-05, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/IceBlockAlt/StaticBody2D"]
+position = Vector2( 0.5, 0 )
+shape = SubResource( 7 )
+
+[node name="SpikesTopAlt" type="Sprite" parent="main"]
+position = Vector2( 142, 482 )
+scale = Vector2( 0.971428, 0.7 )
+texture = ExtResource( 5 )
+
+[node name="SpikesTopAlt2" type="Sprite" parent="main"]
+position = Vector2( 304, 421 )
+scale = Vector2( 0.885715, 0.685714 )
+texture = ExtResource( 5 )
+
+[node name="SpikesTopAlt3" type="Sprite" parent="main"]
+position = Vector2( 70, 424 )
+scale = Vector2( 0.842857, 1 )
+texture = ExtResource( 5 )
+
+[node name="TundraHillRight" type="Sprite" parent="main"]
+position = Vector2( 282, 493 )
+texture = ExtResource( 20 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="main/TundraHillRight"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/TundraHillRight/StaticBody2D2"]
+shape = SubResource( 46 )
+
+[node name="IceBlockHalf4" type="Sprite" parent="main"]
+position = Vector2( 305, 395 )
+texture = ExtResource( 9 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/IceBlockHalf4"]
+position = Vector2( -1, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/IceBlockHalf4/StaticBody2D"]
+position = Vector2( -1, -16 )
+shape = SubResource( 5 )
+
+[node name="SpikesTopAlt4" type="Sprite" parent="main"]
+position = Vector2( 408, 388 )
+scale = Vector2( 0.885714, 0.785714 )
+texture = ExtResource( 5 )
+
+[node name="SpikesTopAlt5" type="Sprite" parent="main"]
+position = Vector2( 173, 354 )
+scale = Vector2( 0.9, 1 )
+texture = ExtResource( 8 )
+
+[node name="IceBlockHalf6" type="Sprite" parent="main"]
+position = Vector2( 142, 455 )
+texture = ExtResource( 9 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/IceBlockHalf6"]
+position = Vector2( 0, -16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/IceBlockHalf6/StaticBody2D"]
+position = Vector2( 0, 2.5 )
+shape = SubResource( 3 )
+
+[node name="IceBlockHalf7" type="Sprite" parent="main"]
+position = Vector2( 530, 299 )
+texture = ExtResource( 9 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/IceBlockHalf7"]
+position = Vector2( 1, -10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/IceBlockHalf7/StaticBody2D"]
+position = Vector2( -1.5, -4.5 )
+shape = SubResource( 11 )
+
+[node name="IceBlockHalf8" type="Sprite" parent="main"]
+position = Vector2( 624, 253 )
+texture = ExtResource( 9 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/IceBlockHalf8"]
+position = Vector2( -1, -12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/IceBlockHalf8/StaticBody2D"]
+position = Vector2( 1, -3 )
+shape = SubResource( 15 )
+
+[node name="IceBlockHalf9" type="Sprite" parent="main"]
+position = Vector2( 710, 318 )
+texture = ExtResource( 9 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/IceBlockHalf9"]
+position = Vector2( 0, -14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/IceBlockHalf9/StaticBody2D"]
+position = Vector2( -0.5, -1.5 )
+shape = SubResource( 16 )
+
+[node name="SpikesTopAlt2" type="Sprite" parent="main/IceBlockHalf9"]
+position = Vector2( -0.249991, 36 )
+scale = Vector2( 0.878571, 1 )
+texture = ExtResource( 8 )
+
+[node name="IceBlockHalf10" type="Sprite" parent="main"]
+position = Vector2( 801, 373 )
+texture = ExtResource( 9 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/IceBlockHalf10"]
+position = Vector2( 0, -14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/IceBlockHalf10/StaticBody2D"]
+position = Vector2( 0.5, 0 )
+shape = SubResource( 17 )
+
+[node name="IceBlockHalf11" type="Sprite" parent="main"]
+position = Vector2( 965, 258 )
+texture = ExtResource( 9 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/IceBlockHalf11"]
+position = Vector2( 0, -15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/IceBlockHalf11/StaticBody2D"]
+position = Vector2( 0, 0.5 )
+shape = SubResource( 18 )
+
+[node name="IceBlockHalf12" type="Sprite" parent="main"]
+position = Vector2( 842, 214.5 )
+scale = Vector2( 1, 0.757143 )
+texture = ExtResource( 9 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/IceBlockHalf12"]
+position = Vector2( 0, -13.2076 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/IceBlockHalf12/StaticBody2D"]
+position = Vector2( 1, -1.32076 )
+shape = SubResource( 19 )
+
+[node name="IceBlockHalf13" type="Sprite" parent="main"]
+position = Vector2( 891, 317 )
+texture = ExtResource( 9 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/IceBlockHalf13"]
+position = Vector2( 0, -14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/IceBlockHalf13/StaticBody2D"]
+position = Vector2( 1, -1 )
+shape = SubResource( 20 )
+
+[node name="IceBlockHalf14" type="Sprite" parent="main"]
+position = Vector2( 667, 134 )
+texture = ExtResource( 9 )
+
+[node name="IceBlockHalf" type="Sprite" parent="main/IceBlockHalf14"]
+position = Vector2( -273, 103 )
+texture = ExtResource( 9 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/IceBlockHalf14/IceBlockHalf"]
+position = Vector2( 0, -12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/IceBlockHalf14/IceBlockHalf/StaticBody2D"]
+position = Vector2( -0.5, -2.5 )
+shape = SubResource( 12 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/IceBlockHalf14"]
+position = Vector2( 2, -18 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/IceBlockHalf14/StaticBody2D"]
+position = Vector2( -2.5, 3 )
+shape = SubResource( 22 )
+
+[node name="IceBlockHalf15" type="Sprite" parent="main"]
+position = Vector2( 566, 114 )
+texture = ExtResource( 9 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/IceBlockHalf15"]
+position = Vector2( 0, -15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/IceBlockHalf15/StaticBody2D"]
+position = Vector2( 0.5, 0.5 )
+shape = SubResource( 25 )
+
+[node name="IceBlockHalf16" type="Sprite" parent="main"]
+position = Vector2( 417, 91 )
+scale = Vector2( 2.82857, 1 )
+texture = ExtResource( 9 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/IceBlockHalf16"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/IceBlockHalf16/StaticBody2D"]
+position = Vector2( 0.707062, -15 )
+shape = SubResource( 26 )
+
+[node name="IceBlockHalf17" type="Sprite" parent="main"]
+position = Vector2( 285.5, 219 )
+scale = Vector2( 1.01429, 1 )
+texture = ExtResource( 9 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/IceBlockHalf17"]
+position = Vector2( 0, -13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/IceBlockHalf17/StaticBody2D"]
+position = Vector2( 1, -2 )
+shape = SubResource( 13 )
+
+[node name="IceBlockHalf18" type="Sprite" parent="main"]
+position = Vector2( 163.5, 175 )
+scale = Vector2( 1.58571, 1 )
+texture = ExtResource( 9 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/IceBlockHalf18"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/IceBlockHalf18/StaticBody2D"]
+position = Vector2( -1, -14.5 )
+shape = SubResource( 14 )
+
+[node name="IceBlockHalf19" type="Sprite" parent="main"]
+position = Vector2( 977, 163 )
+texture = ExtResource( 9 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/IceBlockHalf19"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/IceBlockHalf19/StaticBody2D"]
+position = Vector2( -0.5, -15.5 )
+shape = SubResource( 23 )
+
+[node name="IceBlockHalf21" type="Sprite" parent="main"]
+position = Vector2( 756, 193 )
+texture = ExtResource( 9 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/IceBlockHalf21"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/IceBlockHalf21/StaticBody2D"]
+position = Vector2( 0, -14.5 )
+shape = SubResource( 21 )
+
+[node name="SpikesTopAlt6" type="Sprite" parent="main"]
+position = Vector2( 164, 206 )
+scale = Vector2( 1.5, 0.885714 )
+texture = ExtResource( 5 )
+
+[node name="SpikesTopAlt7" type="Sprite" parent="main"]
+position = Vector2( 286, 247 )
+scale = Vector2( 0.914286, 0.814286 )
+texture = ExtResource( 5 )
+
+[node name="SpikesTopAlt8" type="Sprite" parent="main"]
+position = Vector2( 55, 231 )
+scale = Vector2( 0.942857, 1 )
+texture = ExtResource( 5 )
+
+[node name="SpikesTopAlt9" type="Sprite" parent="main"]
+position = Vector2( 480, 127 )
+texture = ExtResource( 5 )
+
+[node name="SpikesTopAlt10" type="Sprite" parent="main"]
+position = Vector2( 411, 127 )
+texture = ExtResource( 5 )
+
+[node name="SpikesTopAlt11" type="Sprite" parent="main"]
+position = Vector2( 351, 128 )
+scale = Vector2( 0.8, 1 )
+texture = ExtResource( 5 )
+
+[node name="SpikesTopAlt12" type="Sprite" parent="main"]
+position = Vector2( 566, 148 )
+scale = Vector2( 0.857143, 1 )
+texture = ExtResource( 5 )
+
+[node name="SpikesTopAlt13" type="Sprite" parent="main"]
+position = Vector2( 667, 170 )
+scale = Vector2( 0.857142, 1 )
+texture = ExtResource( 5 )
+
+[node name="SpikesTopAlt14" type="Sprite" parent="main"]
+position = Vector2( 756, 230 )
+scale = Vector2( 0.871429, 1 )
+texture = ExtResource( 5 )
+
+[node name="SpikesTopAlt15" type="Sprite" parent="main"]
+position = Vector2( 531, 332 )
+scale = Vector2( 0.914286, 0.857143 )
+texture = ExtResource( 5 )
+
+[node name="SpikesTopAlt16" type="Sprite" parent="main"]
+position = Vector2( 624, 291 )
+scale = Vector2( 0.914286, 1 )
+texture = ExtResource( 8 )
+
+[node name="SpikesTopAlt17" type="Sprite" parent="main"]
+position = Vector2( 802, 409 )
+scale = Vector2( 0.885715, 1 )
+texture = ExtResource( 8 )
+
+[node name="SpikesTopAlt18" type="Sprite" parent="main"]
+position = Vector2( 891, 352 )
+scale = Vector2( 0.914286, 1 )
+texture = ExtResource( 8 )
+
+[node name="SpikesTopAlt19" type="Sprite" parent="main"]
+position = Vector2( 965, 289.5 )
+scale = Vector2( 0.828572, 0.871429 )
+texture = ExtResource( 5 )
+
+[node name="SpikesTopAlt20" type="Sprite" parent="main"]
+position = Vector2( 841, 247.5 )
+scale = Vector2( 0.857143, 0.885714 )
+texture = ExtResource( 5 )
+
+[node name="SpikesTopAlt21" type="Sprite" parent="main"]
+position = Vector2( 978, 191 )
+scale = Vector2( 0.942857, 0.814286 )
+texture = ExtResource( 5 )
+
+[node name="SnowWave" type="Sprite" parent="main"]
+position = Vector2( 306, 331 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave2" type="Sprite" parent="main"]
+position = Vector2( 409, 263 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave3" type="Sprite" parent="main"]
+position = Vector2( 173, 252 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave4" type="Sprite" parent="main"]
+position = Vector2( 69, 325 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave5" type="Sprite" parent="main"]
+position = Vector2( 142, 390 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave6" type="Sprite" parent="main"]
+position = Vector2( 530, 236 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave7" type="Sprite" parent="main"]
+position = Vector2( 625, 191 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave8" type="Sprite" parent="main"]
+position = Vector2( 710, 255 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave9" type="Sprite" parent="main"]
+position = Vector2( 801, 310 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave10" type="Sprite" parent="main"]
+position = Vector2( 211, 431 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave11" type="Sprite" parent="main"]
+position = Vector2( 891, 254 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave12" type="Sprite" parent="main"]
+position = Vector2( 965, 194 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave13" type="Sprite" parent="main"]
+position = Vector2( 843, 160 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave14" type="Sprite" parent="main"]
+position = Vector2( 395, 175 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave15" type="Sprite" parent="main"]
+position = Vector2( 287, 156 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave16" type="Sprite" parent="main"]
+position = Vector2( 164, 113 )
+scale = Vector2( 1.57143, 1 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave17" type="Sprite" parent="main"]
+position = Vector2( 417, 27 )
+scale = Vector2( 2.8, 1 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave18" type="Sprite" parent="main"]
+position = Vector2( 566, 49 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave" type="Sprite" parent="main/SnowWave18"]
+position = Vector2( 221, -22 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave2" type="Sprite" parent="main/SnowWave18"]
+position = Vector2( 319, -23 )
+scale = Vector2( 0.957143, 1 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave19" type="Sprite" parent="main"]
+position = Vector2( 667, 70 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave20" type="Sprite" parent="main"]
+position = Vector2( 755, 128 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave21" type="Sprite" parent="main"]
+position = Vector2( 977, 99 )
+texture = ExtResource( 6 )
+
+[node name="SpikesTop" type="Sprite" parent="main"]
+position = Vector2( 395.5, 252 )
+scale = Vector2( 0.871429, 0.371429 )
+texture = ExtResource( 10 )
+
+[node name="TundraCliffLeftAlt" type="Sprite" parent="main"]
+position = Vector2( 960.208, 99.0086 )
+rotation = -3.15249
+scale = Vector2( 0.519019, 1 )
+texture = ExtResource( 17 )
+
+[node name="TundraCliffRightAlt" type="Sprite" parent="main/TundraCliffLeftAlt"]
+position = Vector2( -68.901, -0.347054 )
+rotation = 0.00588776
+scale = Vector2( 0.917401, 1.00017 )
+texture = ExtResource( 12 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/TundraCliffLeftAlt/TundraCliffRightAlt"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/TundraCliffLeftAlt/TundraCliffRightAlt/StaticBody2D"]
+position = Vector2( 39.8647, -0.0436859 )
+scale = Vector2( 0.999999, 1.03999 )
+shape = SubResource( 30 )
+
+[node name="IceBlockHalfAlt" type="Sprite" parent="main"]
+position = Vector2( 787, 83 )
+scale = Vector2( 1, 0.785714 )
+texture = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/IceBlockHalfAlt"]
+position = Vector2( 0.999939, -11.4545 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/IceBlockHalfAlt/StaticBody2D"]
+position = Vector2( -0.5, -3.27272 )
+shape = SubResource( 28 )
+
+[node name="IceBlockHalfAlt2" type="Sprite" parent="main"]
+position = Vector2( 884, 87 )
+scale = Vector2( 1, 0.814286 )
+texture = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="main/IceBlockHalfAlt2"]
+position = Vector2( 1, -13.5088 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="main/IceBlockHalfAlt2/StaticBody2D"]
+position = Vector2( -1, -2.45614 )
+shape = SubResource( 29 )
+
+[node name="SpikesTopAlt22" type="Sprite" parent="main"]
+position = Vector2( 788.5, 109.5 )
+scale = Vector2( 0.871429, 0.842857 )
+texture = ExtResource( 5 )
+
+[node name="SpikesTopAlt23" type="Sprite" parent="main"]
+position = Vector2( 883.5, 116.5 )
+scale = Vector2( 0.871428, 0.9 )
+texture = ExtResource( 5 )
+
+[node name="SnowWave22" type="Sprite" parent="main"]
+position = Vector2( 171, 497 )
+scale = Vector2( 1, 1.10714 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave23" type="Sprite" parent="main"]
+position = Vector2( 101.5, 498 )
+scale = Vector2( 1.1, 1.02857 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave24" type="Sprite" parent="main"]
+position = Vector2( 32, 498 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave25" type="Sprite" parent="main"]
+position = Vector2( 238, 503 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave26" type="Sprite" parent="main"]
+position = Vector2( 304, 504 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave27" type="Sprite" parent="main"]
+position = Vector2( 340, 503 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave28" type="Sprite" parent="main"]
+position = Vector2( 396, 505 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave29" type="Sprite" parent="main"]
+position = Vector2( 451, 506 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave30" type="Sprite" parent="main"]
+position = Vector2( 513, 504 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave31" type="Sprite" parent="main"]
+position = Vector2( 574, 506 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave32" type="Sprite" parent="main"]
+position = Vector2( 606, 503 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave33" type="Sprite" parent="main"]
+position = Vector2( 657, 506 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave34" type="Sprite" parent="main"]
+position = Vector2( 691, 506 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave46" type="Sprite" parent="main"]
+position = Vector2( 759, 505 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave45" type="Sprite" parent="main"]
+position = Vector2( 817, 505 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave44" type="Sprite" parent="main"]
+position = Vector2( 884, 505 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave43" type="Sprite" parent="main"]
+position = Vector2( 926, 508 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave42" type="Sprite" parent="main"]
+position = Vector2( 958, 506 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave41" type="Sprite" parent="main"]
+position = Vector2( 993, 506 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave40" type="Sprite" parent="main"]
+position = Vector2( 985, 507 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave39" type="Sprite" parent="main"]
+position = Vector2( 846, 505 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave38" type="Sprite" parent="main"]
+position = Vector2( 625, 505 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave37" type="Sprite" parent="main"]
+position = Vector2( 364, 505 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave35" type="Sprite" parent="main"]
+position = Vector2( 481, 506 )
+texture = ExtResource( 6 )
+
+[node name="SnowWave36" type="Sprite" parent="main"]
+position = Vector2( 542, 506 )
+texture = ExtResource( 6 )
+
+[connection signal="body_entered" from="main/Door" to="main/Door" method="_on_Door_body_entered"]
+[connection signal="body_entered" from="main/Key" to="main/Key" method="_on_Key_body_entered"]
