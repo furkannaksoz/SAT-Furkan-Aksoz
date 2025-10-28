@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/llaveskeys-338166.mp3-7e4c433596caf102aea0db26da2449ca.mp3str"
+
+[deps]
+
+source_file="res://sounds/llaveskeys-338166.mp3"
+dest_files=[ "res://.import/llaveskeys-338166.mp3-7e4c433596caf102aea0db26da2449ca.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

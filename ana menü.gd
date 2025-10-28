@@ -1,5 +1,14 @@
 extends Control
 
+onready var settings_panel = $SettingsPanel
+onready var play_btn = $play
+onready var exit_btn = $exit
+onready var settings_btn = $Settings
+onready var ambience = $Ambience
+onready var music_slider = $SettingsPanel/MusicSlider
+onready var sfx_slider = $SettingsPanel/SfxSlider
+onready var fullscreen_check = $SettingsPanel/FullscreenCheck
+
 func _ready():
 	# ─────────────────────────────
 	# 🌌 Arka Plan (Degrade efektli)
@@ -8,9 +17,9 @@ func _ready():
 	bg.expand = true
 	bg.stretch_mode = TextureRect.STRETCH_SCALE_ON_EXPAND
 	bg.texture = _make_vertical_gradient_tex(
-		Color(0.20, 0.40, 0.65),  # üst (açık mavi)
-		Color(0.10, 0.30, 0.55),  # orta
-		Color(0.05, 0.15, 0.35),  # alt
+		Color(0.20, 0.40, 0.65),
+		Color(0.10, 0.30, 0.55),
+		Color(0.05, 0.15, 0.35),
 		512
 	)
 	add_child(bg)
@@ -25,7 +34,7 @@ func _ready():
 	bg.margin_bottom = 0
 	bg.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
-	# ❄️ Kar Efekti (Godot 3.6 uyumlu)
+	# ❄️ Kar Efekti
 	var snow = Particles2D.new()
 	var mat = ParticlesMaterial.new()
 	mat.gravity = Vector3(0, 45, 0)
@@ -49,10 +58,6 @@ func _ready():
 	# 🎮 Başlık ve Butonlar
 	# ─────────────────────────────
 	var title = $Label
-	var play_btn = $play
-	var exit_btn = $exit
-
-	# ✨ Başlık (tam yazı + şık görünüm)
 	title.text = "❄️  DONUK YOLCULUK ❄️"
 	title.add_color_override("font_color", Color(0.9, 0.98, 1))
 	title.add_color_override("font_outline_color", Color(0.5, 0.85, 1))
@@ -60,16 +65,12 @@ func _ready():
 	title.set("custom_constants/shadow_offset_x", 3)
 	title.set("custom_constants/shadow_offset_y", 3)
 	title.set("custom_constants/shadow_as_outline", true)
-
-	# 🔧 YAZININ TAM GÖZÜKMESİ İÇİN SADECE BU KISIM DEĞİŞTİRİLDİ:
 	title.rect_size = Vector2(get_viewport_rect().size.x, 120)
 	title.align = Label.ALIGN_CENTER
 	title.valign = Label.VALIGN_CENTER
 	title.rect_position = Vector2(0, 80)
 	title.autowrap = false
-	# 🔧 (Yazı artık ekran genişliğine göre ortalanır ve asla kesilmez.)
 
-	# Hafif parlayan efekt
 	var tw = Tween.new()
 	add_child(tw)
 	tw.interpolate_property(title, "modulate",
@@ -87,7 +88,7 @@ func _ready():
 	var sb_hover   = _make_style(Color(0.26, 0.55, 0.75), Color(0.75, 0.95, 1))
 	var sb_pressed = _make_style(Color(0.14, 0.45, 0.65), Color(0.85, 0.98, 1))
 
-	var buttons = [play_btn, exit_btn]
+	var buttons = [play_btn, settings_btn, exit_btn]
 	for btn in buttons:
 		btn.rect_min_size = Vector2(280, 85)
 		btn.add_stylebox_override("normal", sb_normal)
@@ -97,21 +98,45 @@ func _ready():
 		btn.add_color_override("font_color", Color(0.96, 0.99, 1))
 		btn.add_color_override("font_color_hover", Color(0.82, 0.96, 1))
 
-		# Hover’da çok hafif büyüme
-		var bt = Tween.new()
-		add_child(bt)
-		bt.interpolate_property(btn, "rect_scale", Vector2(1.0, 1.0), Vector2(1.04, 1.04), 1.0, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
-		bt.interpolate_property(btn, "rect_scale", Vector2(1.04, 1.04), Vector2(1.0, 1.0), 1.0, Tween.TRANS_SINE, Tween.EASE_IN_OUT, 1.0)
-		bt.start()
-
-	# Buton konumları
+	# Konumlar
 	play_btn.rect_position = Vector2(780, 460)
-	exit_btn.rect_position = Vector2(780, 570)
+	settings_btn.rect_position = Vector2(780, 520)
+	exit_btn.rect_position = Vector2(780, 590)
+
+	# ─────────────────────────────
+	# 🎵 Ambience (arka plan müziği)
+	# ─────────────────────────────
+	if ambience:
+		if ambience.stream:
+			var stream = ambience.stream
+			if stream is AudioStream:
+				stream.loop = true
+				ambience.stream = stream
+		ambience.volume_db = 0
+		ambience.play()
+
+	# ─────────────────────────────
+	# ⚙️ Settings Panel
+	# ─────────────────────────────
+	settings_panel.visible = false
+	settings_panel.modulate.a = 0.0
+
+	# Slider ve CheckBox bağlantıları
+	music_slider.connect("value_changed", self, "_on_music_volume_changed")
+	sfx_slider.connect("value_changed", self, "_on_sfx_volume_changed")
+	fullscreen_check.connect("toggled", self, "_on_fullscreen_toggled")
+
+	# Buton sinyalleri
+	play_btn.connect("pressed", self, "_on_play_button_pressed")
+	exit_btn.connect("pressed", self, "_on_exit_button_pressed")
+	settings_btn.connect("pressed", self, "_on_settings_button_pressed")
+
+	var close_btn = settings_panel.get_node("CloseBtn")
+	close_btn.connect("pressed", self, "_on_close_settings_pressed")
 
 
-# ─────────────────────────────
+
 # 🔹 StyleBoxFlat oluşturucu
-# ─────────────────────────────
 func _make_style(bg_col: Color, border_col: Color) -> StyleBoxFlat:
 	var sb = StyleBoxFlat.new()
 	sb.bg_color = bg_col
@@ -128,9 +153,7 @@ func _make_style(bg_col: Color, border_col: Color) -> StyleBoxFlat:
 	return sb
 
 
-# ─────────────────────────────
-# 🎨 Dikey gradient texture üretici
-# ─────────────────────────────
+# 🔹 Dikey gradient texture üretici
 func _make_vertical_gradient_tex(top_col: Color, mid_col: Color, bottom_col: Color, height := 512) -> ImageTexture:
 	var img = Image.new()
 	img.create(1, height, false, Image.FORMAT_RGBA8)
@@ -153,8 +176,40 @@ func _make_vertical_gradient_tex(top_col: Color, mid_col: Color, bottom_col: Col
 
 # 🎮 Play
 func _on_play_button_pressed():
-	get_tree().change_scene("res://scenes/Main.tscn")
+	get_tree().change_scene("res://Main.tscn")
+
 
 # ❌ Exit
 func _on_exit_button_pressed():
 	get_tree().quit()
+
+
+# ⚙️ Settings açma
+func _on_settings_button_pressed():
+	settings_panel.visible = true
+	var tween = create_tween()
+	tween.tween_property(settings_panel, "modulate:a", 1.0, 0.3)
+
+
+# ↩️ Settings kapama
+func _on_close_settings_pressed():
+	var tween = create_tween()
+	tween.tween_property(settings_panel, "modulate:a", 0.0, 0.3)
+	yield(tween, "finished")
+	settings_panel.visible = false
+
+
+# 🎚️ Müzik sesi ayarı
+func _on_music_volume_changed(value):
+	if ambience:
+		ambience.volume_db = lerp(-40, 0, value / 100.0)  # 0–100 arası slider -> dB
+
+
+# 🎚️ Efekt sesi ayarı
+func _on_sfx_volume_changed(value):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), lerp(-40, 0, value / 100.0))
+
+
+# 🖥️ Tam ekran
+func _on_fullscreen_toggled(button_pressed):
+	OS.window_fullscreen = button_pressed

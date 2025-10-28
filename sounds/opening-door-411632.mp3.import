@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/opening-door-411632.mp3-1372bde205e11af8c044cf493691eb3d.mp3str"
+
+[deps]
+
+source_file="res://sounds/opening-door-411632.mp3"
+dest_files=[ "res://.import/opening-door-411632.mp3-1372bde205e11af8c044cf493691eb3d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
