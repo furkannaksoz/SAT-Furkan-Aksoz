@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://ana menü.gd" type="Script" id=1]
 [ext_resource path="res://play.gd" type="Script" id=2]
 [ext_resource path="res://exit.gd" type="Script" id=3]
+[ext_resource path="res://sounds/wind-blowing-sfx-01-423673.mp3" type="AudioStream" id=4]
 
 [node name="Control" type="Control"]
 anchor_right = 2.966
@@ -13,6 +14,62 @@ margin_right = -418.184
 margin_bottom = -259.8
 script = ExtResource( 1 )
 
+[node name="SettingsPanel" type="Panel" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -214.0
+margin_top = -6.0
+margin_right = -214.0
+margin_bottom = -6.0
+
+[node name="ayarlar" type="Label" parent="SettingsPanel"]
+margin_left = 815.0
+margin_top = 253.0
+margin_right = 859.0
+margin_bottom = 273.0
+text = "Ayarlar"
+
+[node name="MusicSlider" type="HSlider" parent="SettingsPanel"]
+margin_left = 755.0
+margin_top = 335.0
+margin_right = 922.0
+margin_bottom = 360.0
+
+[node name="SfxSlider" type="HSlider" parent="SettingsPanel"]
+margin_left = 752.0
+margin_top = 398.0
+margin_right = 926.0
+margin_bottom = 426.0
+
+[node name="FullscreenCheck" type="CheckBox" parent="SettingsPanel"]
+margin_left = 780.0
+margin_top = 441.0
+margin_right = 885.0
+margin_bottom = 472.0
+text = "Tam Ekran"
+
+[node name="CloseBtn" type="Button" parent="SettingsPanel"]
+margin_left = 767.0
+margin_top = 494.0
+margin_right = 888.0
+margin_bottom = 523.0
+text = "Geri Dön"
+
+[node name="Ana Menü Müzik Ses Ayarı" type="Label" parent="SettingsPanel"]
+margin_left = 757.0
+margin_top = 312.0
+margin_right = 815.0
+margin_bottom = 326.0
+text = "Ana Menü Müzik Ses Ayari"
+
+[node name="Oyun İçi Müzik Sesi Ayarı" type="Label" parent="SettingsPanel"]
+margin_left = 758.0
+margin_top = 385.0
+margin_right = 929.0
+margin_bottom = 399.0
+text = "Oyun İçi Müzik Ses Ayari"
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = -0.024
 anchor_top = 0.5
@@ -22,11 +79,10 @@ margin_left = 57.504
 
 [node name="Label" type="Label" parent="."]
 physics_interpolation_mode = 2
-margin_left = 326.0
-margin_top = 117.0
-margin_right = 826.0
-margin_bottom = 197.0
-rect_rotation = -0.480282
+margin_left = 470.0
+margin_top = 84.0
+margin_right = 1010.0
+margin_bottom = 132.0
 text = "					
 Donuk Yolculuk
 "
@@ -36,10 +92,10 @@ percent_visible = 0.727273
 max_lines_visible = 6
 
 [node name="exit" type="Button" parent="."]
-margin_left = 463.0
-margin_top = 328.0
-margin_right = 681.0
-margin_bottom = 429.0
+margin_left = 464.0
+margin_top = 416.0
+margin_right = 717.0
+margin_bottom = 472.0
 custom_colors/icon_color_pressed = Color( 0, 0, 0, 1 )
 custom_colors/icon_color_disabled = Color( 0, 0, 0, 1 )
 action_mode = 0
@@ -47,10 +103,10 @@ text = "exit"
 script = ExtResource( 3 )
 
 [node name="play" type="Button" parent="."]
-margin_left = 460.0
-margin_top = 259.0
-margin_right = 681.0
-margin_bottom = 313.0
+margin_left = 465.0
+margin_top = 255.0
+margin_right = 713.0
+margin_bottom = 291.0
 focus_mode = 1
 custom_colors/icon_color_pressed = Color( 0, 0, 0, 1 )
 custom_colors/icon_color_disabled = Color( 0, 0, 0, 1 )
@@ -58,6 +114,18 @@ action_mode = 0
 enabled_focus_mode = 1
 text = "play"
 script = ExtResource( 2 )
+
+[node name="Settings" type="Button" parent="."]
+margin_left = 467.0
+margin_top = 339.0
+margin_right = 711.0
+margin_bottom = 379.0
+text = "Settings"
+
+[node name="Ambience" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+autoplay = true
 
 [connection signal="pressed" from="exit" to="exit" method="_on_exit_pressed"]
 [connection signal="pressed" from="play" to="play" method="_on_play_pressed"]
