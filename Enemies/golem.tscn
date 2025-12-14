@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Enemies/Golem.gd" type="Script" id=1]
+[ext_resource path="res://Enemies/golem/golem_move.png" type="Texture" id=2]
+[ext_resource path="res://Enemies/golem/golem_ıdle.png" type="Texture" id=3]
+[ext_resource path="res://Enemies/golem/golem_attack2.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": false,
+"name": "attack",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "move",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 35, 32 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 13.5, 12 )
+
+[sub_resource type="CircleShape2D" id=4]
+custom_solver_bias = 1.0
+radius = 98.0051
+
+[node name="golem" type="KinematicBody2D"]
+collision_mask = 2
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 374.75, 578.75 )
+scale = Vector2( 0.0952149, 0.0830079 )
+frames = SubResource( 1 )
+animation = "idle"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 375, 571 )
+shape = SubResource( 2 )
+
+[node name="DamageArea" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
+position = Vector2( 423.5, 576 )
+shape = SubResource( 3 )
+
+[node name="DetectionArea" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+position = Vector2( 383, 574 )
+shape = SubResource( 4 )
+
+[node name="KillTimer" type="Timer" parent="."]
+wait_time = 0.35
+one_shot = true
+
+[connection signal="body_entered" from="DamageArea" to="." method="_on_DamageArea_body_entered"]
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_DetectionArea_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_DetectionArea_body_exited"]

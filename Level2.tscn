@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Tiles/keyYellow.png" type="Texture" id=1]
 [ext_resource path="res://player.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://sounds/wind-blowing-sfx-01-423673.mp3" type="AudioStream" id=15]
 [ext_resource path="res://sounds/llaveskeys-338166.mp3" type="AudioStream" id=16]
 [ext_resource path="res://sounds/opening-door-411632.mp3" type="AudioStream" id=17]
+[ext_resource path="res://Enemies/golem.tscn" type="PackedScene" id=18]
 
 [sub_resource type="ConvexPolygonShape2D" id=11]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -152,13 +153,12 @@ extents = Vector2( 26.5, 32 )
 extents = Vector2( 13.5, 31.25 )
 
 [sub_resource type="RectangleShape2D" id=16]
-extents = Vector2( 73.9375, 21.5 )
+extents = Vector2( 73.9988, 20.5 )
 
 [node name="Level2" type="Node2D"]
 script = ExtResource( 4 )
 
 [node name="DonukYolculukSahne2YaniFinalSahnesininArkaPlanı" type="Sprite" parent="."]
-visible = false
 position = Vector2( 911.5, 514 )
 scale = Vector2( 1.58008, 1.40625 )
 texture = ExtResource( 13 )
@@ -166,6 +166,8 @@ texture = ExtResource( 13 )
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 625, 429 )
 tile_set = SubResource( 4 )
+collision_layer = 2
+collision_mask = 0
 format = 1
 tile_data = PoolIntArray( -458763, 0, 0, -458762, 0, 0, -458761, 0, 0, -458760, 0, 0, -458759, 0, 0, -458758, 0, 0, -458757, 0, 0, -458756, 0, 0, -458755, 0, 0, -458754, 0, 0, -458753, 0, 0, -524288, 0, 0, -524287, 0, 0, -524286, 0, 0, -524285, 0, 0, -524284, 0, 0, -524283, 0, 0, -524282, 0, 0, -524281, 0, 0, -524280, 0, 0, -524279, 0, 0, -524278, 0, 0, -524277, 0, 0, -524276, 0, 0, -524275, 0, 0, -524274, 0, 0, -524273, 0, 0, -524272, 0, 0, -524271, 0, 0, -524270, 0, 0, -524269, 0, 0, -524268, 0, 0, -393227, 0, 0, -458732, 0, 0, -327691, 0, 0, -393196, 0, 0, -262155, 0, 0, -327660, 0, 0, -196619, 0, 0, -196612, 0, 0, -262142, 0, 0, -262141, 0, 0, -262140, 0, 0, -262124, 0, 0, -131083, 0, 0, -131077, 0, 0, -131076, 0, 0, -131075, 0, 0, -196607, 0, 0, -196603, 0, 0, -196588, 0, 0, -65548, 0, 0, -65547, 0, 0, -65542, 0, 0, -65538, 0, 0, -131072, 0, 0, -131066, 0, 0, -131052, 0, 0, -131051, 0, 0, -12, 0, 0, -7, 0, 0, -1, 0, 0, -65529, 0, 0, -65515, 0, 0, 65524, 0, 0, 65528, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, 14, 1, 0, 15, 1, 0, 16, 1, 0, 17, 1, 0, 18, 1, 0, 21, 0, 0, 131060, 0, 0, 131061, 0, 0, 131062, 0, 0, 131063, 3, 0, 65555, 4, 0, 65556, 0, 0, 65557, 0, 0, 196597, 0, 0, 196598, 0, 0, 196599, 0, 0, 196600, 3, 0, 131090, 4, 0, 131091, 0, 0, 131092, 0, 0, 262133, 0, 0, 262134, 0, 0, 262135, 0, 0, 262136, 0, 0, 262137, 3, 0, 196625, 4, 0, 196626, 0, 0, 196627, 0, 0, 196628, 0, 0, 327669, 0, 0, 327670, 0, 0, 327671, 0, 0, 327672, 0, 0, 327673, 0, 0, 327674, 3, 0, 262160, 4, 0, 262161, 0, 0, 262162, 0, 0, 262163, 0, 0, 262164, 0, 0, 393205, 0, 0, 393206, 1, 0, 393207, 1, 0, 393208, 1, 0, 393209, 1, 0, 393210, 1, 0, 393211, 1, 0, 393212, 1, 0, 393213, 1, 0, 393214, 1, 0, 393215, 1, 0, 327680, 1, 0, 327681, 1, 0, 327682, 1, 0, 327683, 1, 0, 327684, 1, 0, 327685, 1, 0, 327686, 1, 0, 327687, 0, 0, 327688, 3, 0, 327695, 4, 0, 327696, 0, 0, 327697, 1, 0, 327698, 1, 0, 327699, 1, 0, 327700, 0, 0, 458741, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 3, 0, 393230, 4, 0, 393231, 0, 0, 393232, 0, 0, 393236, 0, 0, 524277, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 3, 0, 458765, 4, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458772, 0, 0, 589813, 0, 0, 524308, 0, 0, 655349, 0, 0, 655350, 1, 0, 655351, 1, 0, 655352, 1, 0, 655353, 1, 0, 655354, 1, 0, 655355, 1, 0, 655356, 1, 0, 655357, 1, 0, 655358, 1, 0, 655359, 1, 0, 589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589831, 1, 0, 589832, 1, 0, 589833, 1, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589839, 1, 0, 589840, 1, 0, 589841, 1, 0, 589842, 1, 0, 589843, 1, 0, 589844, 0, 0, 720885, 0, 0, 655380, 0, 0, 786421, 0, 0, 786422, 0, 0, 786423, 0, 0, 786424, 0, 0, 786425, 0, 0, 786426, 0, 0, 786427, 0, 0, 786428, 0, 0, 786429, 0, 0, 786430, 0, 0, 786431, 0, 0, 720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0 )
 
@@ -231,7 +233,7 @@ shape = SubResource( 17 )
 stream = ExtResource( 17 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 547, 137 )
+position = Vector2( 469, 666 )
 scale = Vector2( 1.49609, 1.15234 )
 
 [node name="RescuedAlly" type="KinematicBody2D" parent="."]
@@ -246,16 +248,22 @@ texture = ExtResource( 5 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RescuedAlly"]
 position = Vector2( 1083, 182 )
 shape = SubResource( 3 )
+disabled = true
 
 [node name="DetectionArea" type="Area2D" parent="RescuedAlly"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RescuedAlly/DetectionArea"]
-position = Vector2( 1042.06, 189.5 )
+position = Vector2( 1042, 188.5 )
 shape = SubResource( 16 )
 
 [node name="Ambience" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 15 )
 autoplay = true
+
+[node name="golem" parent="." instance=ExtResource( 18 )]
+position = Vector2( -180, 401 )
+collision_layer = 4
+collision_mask = 3
 
 [connection signal="body_entered" from="RescuedAlly/DetectionArea" to="RescuedAlly" method="_on_DetectionArea_body_entered"]
 [connection signal="body_exited" from="RescuedAlly/DetectionArea" to="RescuedAlly" method="_on_DetectionArea_body_exited"]
